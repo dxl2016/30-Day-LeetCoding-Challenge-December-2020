@@ -1,0 +1,8 @@
+class Solution:
+    def nextGreaterElement(self, n: int) -> int:
+        res = set(list(permutations(str(n))))
+        num = sorted([int("".join(i)) for i in res])
+        for i in num:
+            if (i > n) and (i <= pow(2, 31)-1):
+                return i
+        return -1
