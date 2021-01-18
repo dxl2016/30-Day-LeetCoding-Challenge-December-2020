@@ -1,0 +1,17 @@
+class Solution:
+    def reachNumber(self, target: int) -> int:
+        target = abs(target)
+        step = 0
+        cur = 0
+        
+        while True:
+            if cur == target:
+                break
+            
+            if cur > target and (cur - target)%2 == 0:
+                break
+            
+            step += 1
+            cur += step
+        
+        return step
