@@ -1,0 +1,9 @@
+class Solution:
+    def largestRectangleArea(self, heights: List[int]) -> int:
+        ans = 0
+        for i in range(len(heights)):
+            m = heights[i]
+            for j in range(i, len(heights)):
+                m = min(heights[j], m)
+                ans = max(ans, m*(j-i+1))
+        return ans
